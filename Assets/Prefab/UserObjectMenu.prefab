@@ -112,11 +112,11 @@ RectTransform:
   m_Father: {fileID: 992256546749635734}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.2330017}
-  m_SizeDelta: {x: 0, y: 0.100999296}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -48.366592}
+  m_SizeDelta: {x: 100, y: 100.101}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &992256545528926786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   window: {fileID: 992256545528926797}
+  apple: {fileID: 0}
 --- !u!95 &992256546749635732
 Animator:
   serializedVersion: 3
