@@ -4,6 +4,13 @@ using UnityEngine;
 
 namespace oculus
 {
+    struct PacketObject
+    {
+        string name;
+        GameObject go;
+        int quantity;
+    }
+
     public class ObjectMenu : MonoBehaviour
     {
         public GameObject window;
@@ -29,7 +36,7 @@ namespace oculus
 
         public void OnObjectClick(string name)
         {
-            Instantiate(apple, Vector3.zero, Quaternion.identity);
+            //Instantiate(apple, Vector3.zero, Quaternion.identity);
             /*if (dic.ContainsKey(name))
             {
                 Instantiate(dic[name], window.transform);
