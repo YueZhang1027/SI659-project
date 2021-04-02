@@ -23,7 +23,7 @@ namespace oculus
                 bool isOpened = menu.activeSelf;
                 if (isOpened)
                 {
-                    menuAnimator.ResetTrigger("Open");
+                    //menuAnimator.ResetTrigger("Open");
                     menuAnimator.SetTrigger("Close");
                     StartCoroutine(Wait());
                 }
@@ -31,7 +31,7 @@ namespace oculus
                 {
                     SetInitPosition();
                     menu.SetActive(true);
-                    menuAnimator.ResetTrigger("Close");
+                    //menuAnimator.ResetTrigger("Close");
                     menuAnimator.SetTrigger("Open");
                 }
             }
