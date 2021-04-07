@@ -3,45 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace oculus
+
+public class Cow : MonoBehaviour
 {
-    public class Cow : MonoBehaviour
+    public GameObject bridge;
+    public Text dialog;
+
+    bool Completed = false;
+    // Start is called before the first frame update
+    void Start()
     {
-        public GameObject bridge;
-        public Text dialog;
-
-        bool Completed = false;
-        // Start is called before the first frame update
-        void Start()
-        {
         
-        }
+    }
 
-        // Update is called once per frame
-        void Update()
-        {
+    // Update is called once per frame
+    void Update()
+    {
         
-        }
+    }
 
-        private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.name);
+        if (other.name == "Apple")
         {
-            Debug.Log(other.name);
-            if (other.name == "Apple")
-            {
-                other.gameObject.SetActive(false);
-                Completed = true;
-                dialog.text = "Thanks! You are the best!";
+            other.gameObject.SetActive(false);
+            Completed = true;
+            dialog.text = "Thanks! You are the best!";
 
-                bridge.SetActive(true);
+            bridge.SetActive(true);
 
-            }
-            else if (other.name == "Bucket")
-            {
-            }
-            else
-            {
-                dialog.text = "Maybe something red and juicy...";
-            }
+        }
+        else if (other.name == "Bucket")
+        {
+        }
+        else if (!Completed)
+        {
+            dialog.text = "Maybe something red and juicy...";
         }
     }
 }
+

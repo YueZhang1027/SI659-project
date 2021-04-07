@@ -8,13 +8,18 @@ namespace oculus
     public class Monument : MonoBehaviour
     {
         public Text hint;
+        string hintText = "";
         bool isTriggered = false;
+
         // Start is called before the first frame update
         private void OnTriggerEnter(Collider other)
         {
             if (isTriggered) return;
             Debug.Log("Triggered!");
+            hintText = hint.text;
+            hint.text = "";
             StartCoroutine(FadeTo(1.0f, 5.0f));
+            StartCoroutine(TypeWriter());
             isTriggered = true;
         }
 
@@ -27,8 +32,16 @@ namespace oculus
                 hint.color = newColor;
                 yield return null;
             }
+        }
 
-            this.gameObject.SetActive(false);
+        IEnumerator TypeWriter()
+        {
+            var wait = new WaitForSeconds(0.5f);
+            foreach (char c in hintText)
+            {
+                hint.text += c;
+                yield return wait;
+            }
         }
     }
 }
