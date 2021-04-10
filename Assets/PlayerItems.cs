@@ -20,9 +20,8 @@ namespace oculus
             this.menu = menu;
         }
 
-        public void ReduceQuantity()
+        public void ChangeQuantity()
         {
-            quantity--;
             Text menuItem = menu.GetComponentInChildren<Text>();
             menuItem.text = "x" + quantity.ToString();
         }
@@ -30,26 +29,14 @@ namespace oculus
 
     public class PlayerItems : MonoBehaviour
     {
-        private static PlayerItems playerItemInstance;
-
-        public static Dictionary<string, PacketObject> itemDic = new Dictionary<string, PacketObject>();
+        public Dictionary<string, PacketObject> itemDic = new Dictionary<string, PacketObject>();
         public GameObject Apple;
         public GameObject AppleMenu;
 
-        private PlayerItems()
+        private void Awake()
         {
             itemDic.Clear();
             itemDic.Add("Apple", new PacketObject("Apple", Apple, 3, AppleMenu));
-        }
-
-        public static PlayerItems GetInstance()
-        {
-            // 如果类的实例不存在则创建，否则直接返回
-            if (playerItemInstance == null)
-            {
-                playerItemInstance = new PlayerItems();
-            }
-            return playerItemInstance;
         }
     }
 }

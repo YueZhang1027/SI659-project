@@ -36,7 +36,7 @@ namespace oculus
 
         IEnumerator TypeWriter()
         {
-            var wait = new WaitForSeconds(0.5f);
+            var wait = new WaitForSeconds(0.2f);
             foreach (char c in hintText)
             {
                 hint.text += c;

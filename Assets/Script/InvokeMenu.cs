@@ -21,6 +21,7 @@ namespace oculus
             if (other.gameObject.tag == "Hand")
             {
                 bool isOpened = menu.activeSelf;
+
                 if (isOpened)
                 {
                     //menuAnimator.ResetTrigger("Open");

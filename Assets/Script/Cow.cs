@@ -8,6 +8,7 @@ public class Cow : MonoBehaviour
 {
     public GameObject bridge;
     public Text dialog;
+    public AudioClip successClip;
 
     bool Completed = false;
     // Start is called before the first frame update
@@ -33,13 +34,21 @@ public class Cow : MonoBehaviour
 
             bridge.SetActive(true);
 
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = successClip;
+            audio.Play();
         }
-        else if (other.name == "Bucket")
+        else if (other.name == "Milk" && Completed) // 
         {
+            Debug.Log("Milk!");
+            other.transform.GetChild(0).gameObject.SetActive(true);
         }
         else if (!Completed)
         {
             dialog.text = "Maybe something red and juicy...";
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = successClip;
+            audio.Play();
         }
     }
 }
