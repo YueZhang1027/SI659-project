@@ -843,8 +843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f350fe607ed5224180a945284c3d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Apple: {fileID: 8195445179592552803, guid: 77e5e03bb6481b44688c229c1987ef87, type: 3}
+  AppleMenu: {fileID: 992256545973591675}
   rightHandTransform: {fileID: 0}
-  playerItems: {fileID: 0}
   Milk: {fileID: 0}
   MilkMenu: {fileID: 762888784}
   carrot: {fileID: 2153553493720100583, guid: 12a4d8276db2b144fb0135f596ead466, type: 3}

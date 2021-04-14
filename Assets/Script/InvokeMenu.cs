@@ -8,7 +8,7 @@ namespace oculus
     {
         public GameObject menu;
         public Transform player;
-        //bool isOpened = false;
+        bool isOpened = false;
         Animator menuAnimator;
 
         private void Start()
@@ -20,10 +20,9 @@ namespace oculus
         {
             if (other.gameObject.tag == "Hand")
             {
-                bool isOpened = menu.activeSelf;
-
                 if (isOpened)
                 {
+                    isOpened = false;
                     //menuAnimator.ResetTrigger("Open");
                     menuAnimator.SetTrigger("Close");
                     StartCoroutine(Wait());
@@ -31,9 +30,9 @@ namespace oculus
                 else
                 {
                     SetInitPosition();
-                    menu.SetActive(true);
                     //menuAnimator.ResetTrigger("Close");
                     menuAnimator.SetTrigger("Open");
+                    isOpened = true;
                 }
             }
         }
@@ -41,7 +40,8 @@ namespace oculus
         IEnumerator Wait()
         {
              yield return new WaitForSeconds(4 / 3f);
-             menu.SetActive(false);
+             menu.transform.position = Vector3.zero;
+             isOpened = false;
         }
 
         void SetInitPosition()
