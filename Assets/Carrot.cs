@@ -24,13 +24,13 @@ namespace oculus
 
         private void OnTriggerEnter(Collider other)
         {
-            if (Get) return;
+           /* if (Get) return;
             GameObject go = GameObject.Instantiate(carrot, 
                     new Vector3(rightHandTransform.position.x, 
                                 rightHandTransform.position.y + 0.3f, 
                                 rightHandTransform.position.z), Quaternion.identity);
             go.name = "Carrot";
-            Get = true;
+            Get = true;*/
         }
 
         private void OnTriggerExit(Collider other)

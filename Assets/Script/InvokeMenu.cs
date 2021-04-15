@@ -22,7 +22,6 @@ namespace oculus
             {
                 if (isOpened)
                 {
-                    isOpened = false;
                     //menuAnimator.ResetTrigger("Open");
                     menuAnimator.SetTrigger("Close");
                     StartCoroutine(Wait());

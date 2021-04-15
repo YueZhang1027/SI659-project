@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &221744437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: -15}
+  m_AnchoredPosition: {x: -35, y: -30}
   m_SizeDelta: {x: 45, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &221744440
@@ -130,7 +130,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Milk
+          m_StringArgument: Carrot
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &762888784
@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &762888785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: 10}
+  m_AnchoredPosition: {x: -35, y: 0}
   m_SizeDelta: {x: 45, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &762888788
@@ -344,7 +344,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x1
+  m_Text: x0
 --- !u!1 &1578740227
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x1
+  m_Text: x0
 --- !u!1 &992256544847739225
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +846,7 @@ MonoBehaviour:
   Apple: {fileID: 8195445179592552803, guid: 77e5e03bb6481b44688c229c1987ef87, type: 3}
   AppleMenu: {fileID: 992256545973591675}
   rightHandTransform: {fileID: 0}
-  Milk: {fileID: 0}
+  Milk: {fileID: 4692031448730283905, guid: 16609a72976de854e93fc50b4e0125dd, type: 3}
   MilkMenu: {fileID: 762888784}
   carrot: {fileID: 2153553493720100583, guid: 12a4d8276db2b144fb0135f596ead466, type: 3}
   carrotMenu: {fileID: 221744436}

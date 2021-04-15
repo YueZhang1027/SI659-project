@@ -11,6 +11,8 @@ namespace oculus
         string hintText = "";
         bool isTriggered = false;
 
+        public AudioClip encounter;
+
         // Start is called before the first frame update
         private void OnTriggerEnter(Collider other)
         {

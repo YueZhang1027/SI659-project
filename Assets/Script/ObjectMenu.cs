@@ -20,8 +20,9 @@ namespace oculus
             this.menu = menu;
         }
 
-        public void ChangeQuantity()
+        public void ChangeQuantity(int changeCount)
         {
+            this.quantity += changeCount;
             Text menuItem = menu.GetComponentInChildren<Text>();
             menuItem.text = "x" + quantity.ToString();
         }
@@ -43,18 +44,14 @@ namespace oculus
 
         public void OnObjectClick(string name)
         {
-            if (itemDic.ContainsKey(name) && itemDic[name].quantity != 0)
+            if (itemDic.ContainsKey(name) && itemDic[name].quantity > 0)
             {
                 GameObject go = GameObject.Instantiate(itemDic[name].go, 
                     new Vector3(rightHandTransform.position.x, 
                                 rightHandTransform.position.y + 0.3f, 
                                 rightHandTransform.position.z), Quaternion.identity);
                 go.name = name;
-
-                var packet = itemDic[name];
-                packet.quantity--;
-                packet.ChangeQuantity();
-                itemDic[name] = packet;
+                itemDic[name].ChangeQuantity(-1);
             }
         }
 
@@ -65,10 +62,15 @@ namespace oculus
                 string name = other.gameObject.name;
                 Destroy(other.gameObject);
 
-                if (!itemDic.ContainsKey(name))
+                if (itemDic.ContainsKey(name))
                 {
-                    switch (name)
+                    itemDic[name].ChangeQuantity(1);
+                    /*switch (name)
                     {
+                        case "Apple":
+                            AppleMenu.SetActive(true);
+                            itemDic.Add("Apple", new PacketObject("Apple", Apple, 1, AppleMenu));
+                            break;
                         case "Milk":
                             MilkMenu.SetActive(true);
                             itemDic.Add("Milk", new PacketObject("Milk", Milk, 1, MilkMenu));
@@ -77,24 +79,16 @@ namespace oculus
                             carrotMenu.SetActive(true);
                             itemDic.Add("Carrot", new PacketObject("Carrot", carrot, 1, carrotMenu));
                             break;
-                    }
-                }
-                else
-                {
-                    var packet = itemDic[name];
-                    packet.quantity++;
-                    packet.ChangeQuantity();
-                    itemDic[name] = packet;
+                    }*/
                 }
             }
         }
 
-        private void Start()
+        private void Awake()
         {
             itemDic.Add("Apple", new PacketObject("Apple", Apple, 3, AppleMenu));
-            // itemDic.Add("Milk", new PacketObject("Milk", Milk, 1, MilkMenu));
-
-           // OnObjectClick("Milk");
+            itemDic.Add("Milk", new PacketObject("Milk", Milk, 0, MilkMenu));
+            itemDic.Add("Carrot", new PacketObject("Carrot", carrot, 0, carrotMenu));
         }
 
     }

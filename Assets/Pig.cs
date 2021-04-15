@@ -39,6 +39,7 @@ namespace oculus
                 AudioSource audio = GetComponent<AudioSource>();
                 audio.clip = successClip;
                 audio.Play();
+                Completed = true;
             }
         }
     }
